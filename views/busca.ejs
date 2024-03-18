@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Busca</title>
+</head>
+<body>
+    <% if (resultado.length > 0) { %>
+        <ul>
+            <% resultado.forEach(livro => { %>
+                <li>
+                    <h2><%= livro.titulo %></h2>
+                    <p>Autor: <%= livro.autor %></p>
+                    <p>Ano: <%= livro.ano %></p>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>Nenhum livro encontrado.</p>
+    <% } %>
+</body>
+</html>

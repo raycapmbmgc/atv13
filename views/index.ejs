@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Busca</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, pink, blue);
+        }
+
+        .rounded-square {
+            margin-top: 170px;
+            border-radius: 10px;
+            border: 2px solid #ced4da;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        /* Estilos para a área de resultados */
+        .resultado-busca {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6">
+                <div class="rounded-square text-center">
+                    <h1 class="mb-4">Busca de Livros</h1>
+                    <form action="/busca" method="GET">
+                        <div class="form-group">
+                            <label for="titulo">Título:</label>
+                            <input type="text" id="titulo" name="titulo" class="form-control rounded">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1">Buscar por Título</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ano">Ano:</label>
+                            <input type="number" id="ano" name="ano" class="form-control rounded">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">Buscar por Ano</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary rounded">Buscar</button>
+                    </form>
+
+            
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
