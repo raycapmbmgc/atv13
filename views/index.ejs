@@ -13,14 +13,14 @@
         }
 
         .rounded-square {
-            margin-top: 170px;
+            margin-top: 100px;
             border-radius: 10px;
             border: 2px solid #ced4da;
             padding: 20px;
             background-color: #fff;
         }
 
-        /* Estilos para a área de resultados */
+        
         .resultado-busca {
             margin-top: 20px;
             padding: 10px;
@@ -42,7 +42,7 @@
                             <label for="titulo">Título:</label>
                             <input type="text" id="titulo" name="titulo" class="form-control rounded">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="titulo">
                                 <label class="custom-control-label" for="customRadio1">Buscar por Título</label>
                             </div>
                         </div>
@@ -50,14 +50,49 @@
                             <label for="ano">Ano:</label>
                             <input type="number" id="ano" name="ano" class="form-control rounded">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="ano">
                                 <label class="custom-control-label" for="customRadio2">Buscar por Ano</label>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary rounded">Buscar</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            
+    
+    <% if (resultado && resultado.length > 0) { %>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="resultado-busca">
+                    <h2>Resultado da Busca</h2>
+                    <ul>
+                        <% resultado.forEach(function(livro) { %>
+                            <li><strong>Título:</strong> <%= livro.titulo %>, <strong>Autor:</strong> <%= livro.autor %>, <strong>Ano:</strong> <%= livro.ano %></li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } else { %>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="resultado-busca">
+                    <h2>Nenhum resultado encontrado</h2>
+                    <p>Não foram encontrados livros com o título ou ano especificado.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
