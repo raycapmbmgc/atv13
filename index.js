@@ -27,11 +27,12 @@ const livrosDB = [
 // Rota principal
 app.get('/', (req, res) => {
     res.render('index', { livrosDB });
-});
+}); //Define uma rota para a raiz do aplicativo. Quando um cliente faz uma solicitação GET para /, o servidor renderiza o template index.ejs, passando o array livrosDB como contexto.
+
 
 // Rota para a busca de livros
 app.get('/busca', (req, res) => {
-    const { titulo, ano } = req.query;
+    const { titulo, ano } = req.query; //Define uma rota para /busca. Quando um cliente faz uma solicitação GET para /busca, o servidor executa uma lógica para buscar livros com base nos parâmetros de consulta fornecidos na URL.
     let resultado = [];
 
     if (titulo) {
